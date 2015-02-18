@@ -10,8 +10,6 @@ HTMLWidgets.widget({
       .attr("height", height)
       .append("g")
 
-
-
     return {
           svg: svg,
           x: null
@@ -99,6 +97,5 @@ HTMLWidgets.widget({
   };
 
   }
-
 
 });
