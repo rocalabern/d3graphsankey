@@ -1,9 +1,9 @@
 Package: d3graphsankey
 Type: Package
-Title: What the package does (short line)
+Title: HTMLwidget for plotting graphs in a sankey style.
 Version: 1.0
-Date: 2015-02-18
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Date: 2015-02-13
+Author: Roc Alabern, Jose Vicente Moyano
+Maintainer: Roc Alabern <roc.alabern@gmail.com>
+Description: HTMLwidget for plotting graphs in a sankey style.
+License: GPLv2
