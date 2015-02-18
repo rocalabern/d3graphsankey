@@ -1,5 +1,4 @@
 library(htmlwidgets)
-library(RJSONIO)
 
 #' @title d3.graphSankey
 #' @description
