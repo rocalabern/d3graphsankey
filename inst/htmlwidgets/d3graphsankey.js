@@ -30,8 +30,8 @@ HTMLWidgets.widget({
     var width = el.offsetWidth;
     var height = el.offsetHeight;
 
-    var nodes = HTMLWidgets.dataframeToD3(x.nodes);
-    var links = HTMLWidgets.dataframeToD3(x.links);
+    var nodes = HTMLWidgets.dataframeToD3(x.nodes[0]);
+    var links = HTMLWidgets.dataframeToD3(x.links[0]);
 
   svg.selectAll("*").remove();
 

@@ -1,5 +1,13 @@
 library(htmlwidgets)
 
+data.frameToList <- function (df) {
+  output = list()
+  for (col in colnames(df)) {
+    output[[col]] = df[,col]
+  }
+  return(output)
+}
+
 #' @title d3.graphSankey
 #' @description
 #' \code{d3.graphSankey} creates and htmlwidgets using sankey in D3. Inputs must be a couple of data.frames in some specific format.
@@ -38,7 +46,12 @@ d3.graphSankey <- function(
     strokeOpacity = strokeOpacity
   )
 
-  htmlwidgets::createWidget("d3graphsankey", x = list(nodes = dfNodes, links = dfLinks, options = options), width = width, height = height)
+  htmlwidgets::createWidget("d3graphsankey",
+                            x = list(
+                              nodes = data.frameToList(dfNodes),
+                              links = data.frameToList(dfLinks),
+                              options = options),
+                            width = width, height = height)
 }
 
 #' Widget output function for use in Shiny
