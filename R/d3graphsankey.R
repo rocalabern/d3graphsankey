@@ -46,12 +46,21 @@ d3.graphSankey <- function(
     strokeOpacity = strokeOpacity
   )
 
-  htmlwidgets::createWidget("d3graphsankey",
-                            x = list(
-                              nodes = data.frameToList(dfNodes),
-                              links = data.frameToList(dfLinks),
-                              options = options),
-                            width = width, height = height)
+  if (utils::packageVersion("htmlwidgets")>="0.4") {
+    htmlwidgets::createWidget("d3graphsankey",
+                              x = list(
+                                nodes = data.frameToList(dfNodes),
+                                links = data.frameToList(dfLinks),
+                                options = options),
+                              width = width, height = height)
+  } else {
+    htmlwidgets::createWidget("d3graphsankey",
+                              x = list(
+                                nodes = dfNodes,
+                                links = dfLinks,
+                                options = options),
+                              width = width, height = height)
+  }
 }
 
 #' Widget output function for use in Shiny
