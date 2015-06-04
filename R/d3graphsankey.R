@@ -1,12 +1,12 @@
 library(htmlwidgets)
 
-data.frameToList <- function (df) {
-  output = list()
-  for (col in colnames(df)) {
-    output[[col]] = df[,col]
-  }
-  return(output)
-}
+# data.frameToList <- function (df) {
+#   output = list()
+#   for (col in colnames(df)) {
+#     output[[col]] = df[,col]
+#   }
+#   return(output)
+# }
 
 #' @title d3.graphSankey
 #' @description
@@ -46,21 +46,22 @@ d3.graphSankey <- function(
     strokeOpacity = strokeOpacity
   )
 
-  if (utils::packageVersion("htmlwidgets")>="0.4") {
-    htmlwidgets::createWidget("d3graphsankey",
-                              x = list(
-                                nodes = data.frameToList(dfNodes),
-                                links = data.frameToList(dfLinks),
-                                options = options),
-                              width = width, height = height)
-  } else {
-    htmlwidgets::createWidget("d3graphsankey",
+#   if (utils::packageVersion("htmlwidgets")>="0.4") {
+#     widget = htmlwidgets::createWidget("d3graphsankey",
+#                               x = list(
+#                                 nodes = data.frameToList(dfNodes),
+#                                 links = data.frameToList(dfLinks),
+#                                 options = options),
+#                               width = width, height = height)
+#   } else {
+    widget = htmlwidgets::createWidget("d3graphsankey",
                               x = list(
                                 nodes = dfNodes,
                                 links = dfLinks,
                                 options = options),
                               width = width, height = height)
-  }
+#   }
+  return(widget)
 }
 
 #' Widget output function for use in Shiny

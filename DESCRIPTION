@@ -1,7 +1,7 @@
 Package: d3graphsankey
 Type: Package
 Title: HTMLwidget for plotting graphs in a sankey style.
-Version: 1.0.1
+Version: 1.0.3
 Date: 2015-02-13
 Author: Roc Alabern, Jose Vicente Moyano
 Maintainer: Roc Alabern <roc.alabern@gmail.com>
